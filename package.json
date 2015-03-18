@@ -1,0 +1,42 @@
+{
+  "name": "hashqueue",
+  "version": "0.1.0",
+  "description": "Serializes task execution based on ids",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeanKit-Labs/hashqueue"
+  },
+  "keywords": [
+    "mutual exclusion"
+  ],
+  "author": "LeanKit",
+  "contributors": [
+    {
+      "name": "Alex Robson",
+      "url": "http://nerdventure.io"
+    }
+  ],
+  "license": "MIT License - http://opensource.org/licenses/MIT",
+  "bugs": {
+    "url": "https://github.com/LeanKit-Labs/hashqueue/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/LeanKit-Labs/hashqueue",
+  "devDependencies": {
+    "biggulp": "~0.0.2",
+    "chai": "^2.1.1",
+    "chai-as-promised": "^4.3.0",
+    "gulp": "^3.8.11",
+    "lodash": "^3.5.0"
+  },
+  "dependencies": {
+    "haberdasher": "~0.1.1",
+    "when": "^3.7.2"
+  }
+}
