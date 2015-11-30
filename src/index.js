@@ -2,10 +2,8 @@ var hasher = require( 'haberdasher' );
 var when = require( 'when' );
 
 function addTask( hash, id, task ) {
-	return hash.get( id.toString() )
-		.then( function( queue ) {
-			return queue.push( task );
-		} );
+	var queue = hash.get( id.toString() );
+	return queue.push( task );
 }
 
 function createQueue() {
@@ -18,7 +16,7 @@ function createQueue() {
 			var item = {
 				task: task,
 				deferred: deferred
-			}
+			};
 			if ( this.pending ) {
 				this.pending.resolve( item );
 				this.pending = undefined;
@@ -35,7 +33,7 @@ function createQueue() {
 				return this.pending.promise;
 			}
 		}
-	}
+	};
 }
 
 function looper( queue ) {
@@ -57,7 +55,7 @@ function looper( queue ) {
 				}
 			}
 		} )
-		.then( function( item ) {
+		.then( function() {
 			if ( !queue.stopped ) {
 				looper( queue );
 			}
@@ -83,7 +81,6 @@ function createHashQueue( limit ) {
 		stopped: false
 	};
 	for (var i = 0; i < limit; i++) {
-		var id = i;
 		var queue = queues[ i ] = createQueue();
 		hash.add( i, queue );
 		looper( queue );

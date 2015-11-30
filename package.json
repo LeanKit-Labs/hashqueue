@@ -1,6 +1,6 @@
 {
   "name": "hashqueue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Serializes task execution based on ids",
   "main": "src/index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "lodash": "^3.5.0"
   },
   "dependencies": {
-    "haberdasher": "~0.1.1",
+    "haberdasher": "~0.2.0",
     "when": "^3.7.2"
   }
 }
